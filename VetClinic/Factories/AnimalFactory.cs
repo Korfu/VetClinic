@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using VetClinic.Attriubte;
 using VetClinic.Helper;
 using VetClinic.Models;
 
 namespace VetClinic.Factories
-{
+{   
     public class AnimalFactory
     {
         private readonly InputHelper _inputHelper = new InputHelper();
@@ -24,13 +25,13 @@ namespace VetClinic.Factories
             switch (chosenAnimal.Key)
             {
                 case ConsoleKey.D1:
-                    createdAnimal = CreateCat();
+                    createdAnimal = InstanceHelper.CreateInstance<Cat>();
                     break;
                 case ConsoleKey.D2:
-                    createdAnimal = CreateDog();
+                    createdAnimal = InstanceHelper.CreateInstance<Dog>();
                     break;
                 case ConsoleKey.D3:
-                    createdAnimal = CreateSnake();
+                    createdAnimal = InstanceHelper.CreateInstance<Snake>();
                     break;
                 default:
                     Console.WriteLine("Wrong option chosen!");
@@ -39,48 +40,48 @@ namespace VetClinic.Factories
             return createdAnimal;
         }
 
-        private Animal CreateSnake()
-        {
-            var snake = new Snake();
-            Console.WriteLine("Creating snake!");
-            FillAnimalFields(snake);
-            snake.Length = _inputHelper.GetIntFromConsole("Length: ");
-            return snake;
-        }
+        //private Animal CreateSnake()
+        //{
+        //    var snake = new Snake();
+        //    Console.WriteLine("Creating snake!");
+        //    FillAnimalFields(snake);
+        //    snake.Length = _inputHelper.GetIntFromConsole("Length: ");
+        //    return snake;
+        //}
 
-        private  Animal CreateDog()
-        {
-            var dog = new Dog();
-            Console.WriteLine("Creating dog!");
-            FillAnimalFields(dog);
-            Console.WriteLine("Race:");
-            dog.Race = Console.ReadLine();
-            Console.WriteLine("Color:");
-            dog.Color = Console.ReadLine();
+        //private  Animal CreateDog()
+        //{
+        //    var dog = new Dog();
+        //    Console.WriteLine("Creating dog!");
+        //    FillAnimalFields(dog);
+        //    Console.WriteLine("Race:");
+        //    dog.Race = Console.ReadLine();
+        //    Console.WriteLine("Color:");
+        //    dog.Color = Console.ReadLine();
 
-            return dog;
-        }
+        //    return dog;
+        //}
 
-        private  Animal CreateCat()
-        {
-            var cat = new Cat();
-            Console.WriteLine("Creating cat!");
+        //private  Animal CreateCat()
+        //{
+        //    var cat = new Cat();
+        //    Console.WriteLine("Creating cat!");
 
-            FillAnimalFields(cat);
+        //    FillAnimalFields(cat);
 
-            Console.WriteLine("Race:");
-            cat.Race = Console.ReadLine();
-            Console.WriteLine("Color:");
-            cat.Color = Console.ReadLine();
+        //    Console.WriteLine("Race:");
+        //    cat.Race = Console.ReadLine();
+        //    Console.WriteLine("Color:");
+        //    cat.Color = Console.ReadLine();
 
-            return cat;
-        }
+        //    return cat;
+        //}
 
-        private void FillAnimalFields(Animal animal)
-        {
-            Console.WriteLine("Name:");
-            animal.Name = Console.ReadLine();
-            animal.Age = _inputHelper.GetIntFromConsole("Age: ");
-        }
+        //private void FillAnimalFields(Animal animal)
+        //{
+        //    Console.WriteLine("Name:");
+        //    animal.Name = Console.ReadLine();
+        //    animal.Age = _inputHelper.GetIntFromConsole("Age: ");
+        //}
     }
 }

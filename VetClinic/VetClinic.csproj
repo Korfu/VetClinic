@@ -42,11 +42,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Attriubte\CreatePromptAttribute.cs" />
     <Compile Include="Events\AppointmentCreatedEvent.cs" />
     <Compile Include="Factories\AnimalFactory.cs" />
     <Compile Include="Factories\AppointmentFactory.cs" />
     <Compile Include="Factories\CustomerFactory.cs" />
     <Compile Include="Helper\InputHelper.cs" />
+    <Compile Include="Helper\InstanceHelper.cs" />
     <Compile Include="Models\Animal.cs" />
     <Compile Include="Models\Appointment.cs" />
     <Compile Include="Models\Cat.cs" />

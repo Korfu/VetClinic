@@ -2,11 +2,13 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using VetClinic.Attriubte;
 
 namespace VetClinic.Models
 {
     public abstract class Animal
     {
+        [CreatePrompt("Animal's age:")]
         public int Age { get; set; }
 
         private string _name;

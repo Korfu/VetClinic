@@ -23,7 +23,7 @@ namespace VetClinic
             {
                 try
                 {
-
+    
                     DisplayMainMenu();
 
                     var chosenOption = Console.ReadKey(true);

@@ -6,14 +6,13 @@ using System.Threading.Tasks;
 
 namespace VetClinic.Attriubte
 {
-    public class ExampleAttribute : Attribute
+    public class CreatePromptAttribute : Attribute
     {
-        public string ExampleText { get; set; }
+        public string Prompt { get; private set; }
 
-        public ExampleAttribute(string exampleText)
+        public CreatePromptAttribute(string prompt)
         {
-            ExampleText = exampleText;
+            Prompt = prompt;
         }
-
     }
 }
