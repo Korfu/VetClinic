@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using VetClinic.Helper;
+using VetClinic.Helpers;
 using VetClinic.Models;
 
 namespace VetClinic.Factories
@@ -25,27 +26,30 @@ namespace VetClinic.Factories
         //}
 
 
-        private readonly InputHelper _inputHelper = new InputHelper();
+        //private readonly InputHelper _inputHelper = new InputHelper();
         public Customer CreateCustomer()
         {
-            Console.WriteLine("Creating customer...");
-            Console.WriteLine("Name:");
-            var name = Console.ReadLine();
-            Console.WriteLine("Surname:");
-            var surname = Console.ReadLine();
+            return InstanceHelper.CreateInstance<Customer>();
 
-            var age = _inputHelper.GetIntFromConsole("Age: ");
 
-            Console.WriteLine("City name:");
-            var cityName = Console.ReadLine();
+            //Console.WriteLine("Creating customer...");
+            //Console.WriteLine("Name:");
+            //var name = Console.ReadLine();
+            //Console.WriteLine("Surname:");
+            //var surname = Console.ReadLine();
 
-            return new Customer
-            {
-                Name = name,
-                Surname = surname,
-                Age = age,
-                CityName = cityName
-            };
+            //var age = _inputHelper.GetIntFromConsole("Age: ");
+
+            //Console.WriteLine("City name:");
+            //var cityName = Console.ReadLine();
+
+            //return new Customer
+            //{
+            //    Name = name,
+            //    Surname = surname,
+            //    Age = age,
+            //    CityName = cityName
+            //};
 
         }
     }

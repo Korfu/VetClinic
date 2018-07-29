@@ -5,13 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 using VetClinic.Attriubte;
 using VetClinic.Helper;
+using VetClinic.Helpers;
 using VetClinic.Models;
 
 namespace VetClinic.Factories
 {   
     public class AnimalFactory
     {
-        private readonly InputHelper _inputHelper = new InputHelper();
+        //private readonly InputHelper _inputHelper = new InputHelper();
 
 
         public Animal CreateAnimal()
